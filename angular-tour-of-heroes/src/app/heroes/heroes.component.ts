@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 
 @Component({
@@ -17,6 +18,8 @@ export class HeroesComponent implements OnInit {
     special_abilites: 'super speed',
     bad_character: true,
   }
+
+  heroes = HEROES;
 
   constructor() { }
 
