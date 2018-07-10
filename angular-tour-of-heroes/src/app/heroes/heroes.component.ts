@@ -12,7 +12,10 @@ export class HeroesComponent implements OnInit {
   hero: Hero = {
     id: 1,
     name: 'Windstorm',
-    belt: 'yellow'
+    belt: 'yellow',
+    expierience: 10,
+    special_abilites: 'super speed',
+    bad_character: true,
   }
 
   constructor() { }
