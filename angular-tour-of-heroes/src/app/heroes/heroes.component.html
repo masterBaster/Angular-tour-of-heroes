@@ -1,43 +1,13 @@
-  <h2 [ngStyle]="{'color':hero.belt}">{{selectedHero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedHero.id}}</div>
-    <div><span>name: </span>{{selectedHero.name}}</div>
-    <div><span>belt: </span>{{selectedHero.belt}}</div>
-
-<div *ngIf="selectedHero">
-  <label>id:
-    <input [(ngModel)]="selectedHero.id" placeholder="id">
-  </label>
-  <label>name:
-    <input [(ngModel)]="selectedHero.name" placeholder="name">
-  </label>
-  <label>belt:
-      <input [(ngModel)]="selectedHero.belt" placeholder="belt">
-    </label>
-</div>
-
-<h2>{{selectedHero.name | uppercase}} Special skills</h2>
-<div><span>expierience: </span> {{selectedHero.expierience}}</div>
-<div><span>special abilites: </span>{{selectedHero.special_abilites}}</div>
-<div><span>bad character: </span>{{selectedHero.bed_character}}</div>
-
-<div *ngIf="selectedHero">
-    <label>expierience:
-      <input [(ngModel)]="selectedHero.expierience" placeholder="expierience">
-    </label>
-    <label>special abilites:
-      <input [(ngModel)]="selectedHero.special_abilites" placeholder="special_abilites">
-    </label>
-    <label>bad_character:
-        <input [(ngModel)]="selectedHero.bad_character" placeholder="bad_character">
-    </label>
-</div>
-
 <h2>My Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" 
   (click)="onSelect(hero)"
   [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span>
     <span class="badge">{{hero.name}}</span>
     <span class="badge" [ngStyle]="{'color':hero.belt}"> {{hero.belt}}</span> 
+    <span class="badge">{{hero.special_abilites}}</span>
   </li>
 </ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
