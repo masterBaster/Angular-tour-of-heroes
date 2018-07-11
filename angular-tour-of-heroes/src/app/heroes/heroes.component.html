@@ -1,40 +1,40 @@
-<h2 [ngStyle]="{'color':hero.belt}">{{hero.name | uppercase}} Details</h2>
-<div><span>id: </span> {{hero.id}}</div>
-<div><span>name: </span>{{hero.name}}</div>
-<div><span>belt: </span>{{hero.belt}}</div>
+  <h2 [ngStyle]="{'color':hero.belt}">{{selectedHero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedHero.id}}</div>
+    <div><span>name: </span>{{selectedHero.name}}</div>
+    <div><span>belt: </span>{{selectedHero.belt}}</div>
 
-<div>
+<div *ngIf="selectedHero">
   <label>id:
-    <input [(ngModel)]="hero.id" placeholder="id">
+    <input [(ngModel)]="selectedHero.id" placeholder="id">
   </label>
   <label>name:
-    <input [(ngModel)]="hero.name" placeholder="name">
+    <input [(ngModel)]="selectedHero.name" placeholder="name">
   </label>
   <label>belt:
-      <input [(ngModel)]="hero.belt" placeholder="belt">
+      <input [(ngModel)]="selectedHero.belt" placeholder="belt">
     </label>
 </div>
 
-<h2>{{hero.name | uppercase}} Special skills</h2>
-<div><span>expierience: </span> {{hero.expierience}}</div>
-<div><span>special abilites: </span>{{hero.special_abilites}}</div>
-<div><span>bad character: </span>{{hero.bed_character}}</div>
+<h2>{{selectedHero.name | uppercase}} Special skills</h2>
+<div><span>expierience: </span> {{selectedHero.expierience}}</div>
+<div><span>special abilites: </span>{{selectedHero.special_abilites}}</div>
+<div><span>bad character: </span>{{selectedHero.bed_character}}</div>
 
-<form>
+<div *ngIf="selectedHero">
     <label>expierience:
-      <input [(ngModel)]="hero.expierience" name="expierience">
+      <input [(ngModel)]="selectedHero.expierience" placeholder="expierience">
     </label>
     <label>special abilites:
-      <input [(ngModel)]="hero.special_abilites" name="special_abilites">
+      <input [(ngModel)]="selectedHero.special_abilites" placeholder="special_abilites">
     </label>
     <label>bad_character:
-        <input [(ngModel)]="hero.bad_character" name="bad_character">
+        <input [(ngModel)]="selectedHero.bad_character" placeholder="bad_character">
     </label>
-</form>
+</div>
 
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
     <span class="badge">{{hero.name}}</span>
     <span class="badge" [ngStyle]="{'color':hero.belt}"> {{hero.belt}}</span> 
   </li>
