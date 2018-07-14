@@ -16,21 +16,6 @@ export class MessageService {
       bad_character: true 
     }
 
-  additemTolocalStorage(): void {
-    try {
-      let HeroObject_serialized = JSON.stringify(this.bestHero);
-      localStorage.setItem('BestHero', HeroObject_serialized);
-      console.log(HeroObject_serialized);
-
-      let HeroObject_deserialized = JSON.parse(localStorage.getItem('BestHero'));
-      console.log(HeroObject_deserialized);
-    }
-    catch(error) {
-      console.error('Error saving to localStorage', error)
-    }
-  }
-  
-
   add(message: string): void {
     this.messages.push(message);
   }
@@ -46,6 +31,20 @@ export class MessageService {
       console.log(localMessages);
     } catch (error) {
       console.error('Error saving to localStorage', error);
+    }
+  }
+
+  additemTolocalStorage(): void {
+    try {
+      let HeroObject_serialized = JSON.stringify(this.bestHero);
+      localStorage.setItem('BestHero', HeroObject_serialized);
+      console.log(HeroObject_serialized);
+
+      let HeroObject_deserialized = JSON.parse(localStorage.getItem('BestHero'));
+      console.log(HeroObject_deserialized);
+    }
+    catch(error) {
+      console.error('Error saving to localStorage', error)
     }
   }
 
