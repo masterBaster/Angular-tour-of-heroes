@@ -1,7 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-export class InMemoryDataService implements InMemoryDataService {
-  createDb(){
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
     const heroes = [
       { id: 11, name: 'Mr. Nice', belt: 'yellow', expierience: 8, special_abilites: 'RAPID CELL REGENERATION', bad_character: true },
       { id: 12, name: 'Narco', belt: 'blue', expierience: 6, special_abilites: 'EMPATHIC MIMICRY', bad_character: true },
@@ -14,6 +14,6 @@ export class InMemoryDataService implements InMemoryDataService {
       { id: 19, name: 'Magma', belt: 'yellow', expierience: 5, special_abilites: 'SPACE-TIME MANIPULATION', bad_character: true },
       { id: 20, name: 'Tornado', belt: 'red', expierience: 7, special_abilites: 'SUPER STRENGTH', bad_character: false }
     ];
-    return (heroes);
+    return {heroes};
   }
 }
