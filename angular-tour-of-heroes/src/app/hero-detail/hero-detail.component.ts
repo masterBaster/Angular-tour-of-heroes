@@ -20,8 +20,8 @@ export class HeroDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.getHero();
-    this.getHeroesByexp();
+    this.getHero();
+    //this.getHeroesByexp();
   }
 
   getHero(): void {
@@ -37,5 +37,10 @@ export class HeroDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
   }
 }
