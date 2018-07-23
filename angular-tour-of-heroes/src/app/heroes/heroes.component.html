@@ -7,11 +7,12 @@
       <span class="badge" [ngStyle]="{'color':hero.belt}"> {{hero.belt}}</span> 
       <span class="badge">{{hero.special_abilites}}</span>
     </a>
+    <button class="deleteButton" (click)="delete(hero)">delete</button>
   </li>
 </ul>
 <div>
-  <label>Hero name:
-    <input #heroName />
+  <label>Hero properties:
+    <input #heroName placeholder="heroName" />
     <p></p>
       <button class="userButton" (click)="add(heroName.value); heroName.value=''">add Hero</button>
   </label>
