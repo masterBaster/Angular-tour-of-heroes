@@ -19,3 +19,22 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+  .userButton {
+    margin-right: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    padding: 0.8em 3em;
+    background: #008000;
+    color: #FFF;
+    border: 0;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.2rem;
+    transition: 0.5s background-color, 0.5s box-shadow;
+    cursor: pointer;
+}
+
+.userButton:hover {
+    background: #005900;
+    color: #fff;
+}
